@@ -23,12 +23,10 @@ function Ticker() {
 
   useEffect(() => {
     const id = setInterval(() => setPrice(makeRandomNumber), 1000);
-    return function () {
+    return function cleanup() {
       clearInterval(id);
     };
   }, []);
-
-  
 
   return (
     <div>
@@ -37,5 +35,4 @@ function Ticker() {
     </div>
   );
 }
-
 export default Ticker;
